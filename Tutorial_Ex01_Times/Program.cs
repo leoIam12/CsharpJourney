@@ -25,7 +25,7 @@ namespace Tutorial_Ex01_Times
 
             for (int i = 0; i < waitingTimes.Length; i++)
             {
-                Console.Write($"O paciente {patientNames[i]} está esperando á: ");
+                Console.Write($"O paciente {patientNames[i]} está à espera há: ");
                 waitingTimes[i] = Convert.ToInt32(Console.ReadLine());
 
 
