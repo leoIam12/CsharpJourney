@@ -24,6 +24,22 @@ namespace Tutorial_Ex05_ClinicMatrix
                 }
             }
 
+            // 1. Imprime o cabeçalho das colunas (Camas) ANTES dos ciclos
+            Console.WriteLine("\tCama 1\tCama 2\tCama 3");
+            Console.WriteLine("-------------------------------");
+
+            for (int row = 0; row < clinicBeds.GetLength(0); ++row)
+            {
+                // 2. Imprime o nome da sala no início de cada linha, antes das idades
+                Console.Write($"Sala {row + 1}|\t");
+                for (int col = 0; col < clinicBeds.GetLength(1); ++col)
+                {
+                    //usar \t para organizar com espaços como uma tabela
+                    Console.Write($"{clinicBeds[row, col]}\t");
+                }
+                Console.WriteLine();
+            }
+
             Console.Write("Clique Enter para terminar.....");
             Console.ReadLine();
         }
