@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex02_Security", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex03_UrgencyChart", "Tutorial_Ex03_UrgencyChart\Tutorial_Ex03_UrgencyChart.csproj", "{79A2268F-634E-4C28-A08F-B0590F5DCC19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex04_StockForeach", "Tutorial_Ex04_StockForeach\Tutorial_Ex04_StockForeach.csproj", "{F3591881-5114-4140-884C-4A371647A079}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{79A2268F-634E-4C28-A08F-B0590F5DCC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79A2268F-634E-4C28-A08F-B0590F5DCC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79A2268F-634E-4C28-A08F-B0590F5DCC19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3591881-5114-4140-884C-4A371647A079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3591881-5114-4140-884C-4A371647A079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3591881-5114-4140-884C-4A371647A079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3591881-5114-4140-884C-4A371647A079}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
