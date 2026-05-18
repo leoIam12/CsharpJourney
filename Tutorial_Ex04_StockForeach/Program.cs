@@ -18,6 +18,23 @@ namespace Tutorial_Ex04_StockForeach
                 medicationStocks[i] = Convert.ToInt32(Console.ReadLine());
             }
 
+            int totalStock = 0;
+            int lowStockCount = 0;
+
+            foreach (int stock in medicationStocks)
+            {
+                //to know the quantity of products in stock
+                if (stock < 10)
+                {
+                    lowStockCount++;
+                }
+
+                totalStock = totalStock + stock;
+            }
+
+            Console.WriteLine($"O total de caixas de medicamentos em stock é: {totalStock}.");
+            Console.WriteLine($"~Medicamentos em stock crítico(menos que 10): {lowStockCount}.");
+
             Console.Write("Clique Enter para terminar.....");
             Console.ReadLine();
         }
