@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex05_ClinicMatrix"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex06_DataValidation", "Tutorial_Ex06_DataValidation\Tutorial_Ex06_DataValidation.csproj", "{94D397AA-1801-43FC-B21F-56B5CBEFAAF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex07_PediatricsDischargeSystem", "Tutorial_Ex07_PediatricsDischargeSystem\Tutorial_Ex07_PediatricsDischargeSystem.csproj", "{69F827EB-5AB7-4C5F-AA8D-80D04B6FBF9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{94D397AA-1801-43FC-B21F-56B5CBEFAAF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94D397AA-1801-43FC-B21F-56B5CBEFAAF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94D397AA-1801-43FC-B21F-56B5CBEFAAF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69F827EB-5AB7-4C5F-AA8D-80D04B6FBF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F827EB-5AB7-4C5F-AA8D-80D04B6FBF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69F827EB-5AB7-4C5F-AA8D-80D04B6FBF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F827EB-5AB7-4C5F-AA8D-80D04B6FBF9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
