@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex12_AmbulanceFuel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Method_Ex01_BMICalculator", "Method_Ex01_BMICalculator\Method_Ex01_BMICalculator.csproj", "{20351E43-A973-49DF-8532-ECB979B2BEE6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Method_Ex02_PatientProfile", "Method_Ex02_PatientProfile\Method_Ex02_PatientProfile.csproj", "{5986E6CD-A5C5-46A3-9AAD-0DD2452DC1C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{20351E43-A973-49DF-8532-ECB979B2BEE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20351E43-A973-49DF-8532-ECB979B2BEE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20351E43-A973-49DF-8532-ECB979B2BEE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5986E6CD-A5C5-46A3-9AAD-0DD2452DC1C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5986E6CD-A5C5-46A3-9AAD-0DD2452DC1C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5986E6CD-A5C5-46A3-9AAD-0DD2452DC1C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5986E6CD-A5C5-46A3-9AAD-0DD2452DC1C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
