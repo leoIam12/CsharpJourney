@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex10_BloodDonation
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex11_TemperatureAlert", "Tutorial_Ex11_TemperatureAlert\Tutorial_Ex11_TemperatureAlert.csproj", "{8AB9028E-27F3-4DAC-8D6C-B275617803D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex12_AmbulanceFuel", "Tutorial_Ex12_AmbulanceFuel\Tutorial_Ex12_AmbulanceFuel.csproj", "{EE02533C-3258-4F46-9F88-634FFA2891FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{8AB9028E-27F3-4DAC-8D6C-B275617803D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AB9028E-27F3-4DAC-8D6C-B275617803D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AB9028E-27F3-4DAC-8D6C-B275617803D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE02533C-3258-4F46-9F88-634FFA2891FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE02533C-3258-4F46-9F88-634FFA2891FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE02533C-3258-4F46-9F88-634FFA2891FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE02533C-3258-4F46-9F88-634FFA2891FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
