@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex08_Multifunction
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex09_GeneralEmergencyOccupancyPanel", "Tutorial_Ex09_GeneralEmergencyOccupancyPanel\Tutorial_Ex09_GeneralEmergencyOccupancyPanel.csproj", "{D4C2F097-E0CD-4775-937D-DAEBA05C787E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_Ex10_BloodDonation", "Tutorial_Ex10_BloodDonation\Tutorial_Ex10_BloodDonation.csproj", "{CC314F26-0829-4CB4-9E23-CF3B33B8F7F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{D4C2F097-E0CD-4775-937D-DAEBA05C787E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4C2F097-E0CD-4775-937D-DAEBA05C787E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4C2F097-E0CD-4775-937D-DAEBA05C787E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC314F26-0829-4CB4-9E23-CF3B33B8F7F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC314F26-0829-4CB4-9E23-CF3B33B8F7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC314F26-0829-4CB4-9E23-CF3B33B8F7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC314F26-0829-4CB4-9E23-CF3B33B8F7F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
