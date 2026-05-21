@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Method_Ex02_PatientProfile"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Method_Ex03_MedicalSearch", "Method_Ex03_MedicalSearch\Method_Ex03_MedicalSearch.csproj", "{F3D684E6-EB95-4FCD-BBA9-9585F49BE324}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Method_Ex04_RapidTriageSystemForMornings", "Method_Ex04_RapidTriageSystemForMornings\Method_Ex04_RapidTriageSystemForMornings.csproj", "{81C27E1B-D14D-4CB7-A76E-81901536D722}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{F3D684E6-EB95-4FCD-BBA9-9585F49BE324}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3D684E6-EB95-4FCD-BBA9-9585F49BE324}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3D684E6-EB95-4FCD-BBA9-9585F49BE324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81C27E1B-D14D-4CB7-A76E-81901536D722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81C27E1B-D14D-4CB7-A76E-81901536D722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81C27E1B-D14D-4CB7-A76E-81901536D722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81C27E1B-D14D-4CB7-A76E-81901536D722}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
