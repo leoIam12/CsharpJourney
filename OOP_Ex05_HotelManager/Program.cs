@@ -44,12 +44,15 @@ namespace OOP_Ex05_HotelManager
             }
 
             Room myRoom = new Room(roomNumber, pricePerNightNumber);
+            CustomerAccount myCustomer = new CustomerAccount();
 
             while (true)
             {
                 Console.Clear();
 
-                string[] optionMenu = {"1 - Ver Estado do Quarto", "2 - Fazer Check-In", "3 - Fazer Check-Out", "4 - Fechar o Sistema"};
+                string[] optionMenu = {"1 - Ver Estado do Quarto", "2 - Fazer Check-In", "3 - Fazer Check-Out", 
+                                       "4 - Depositar o dinheiro do Cliente", "5 - Levantar o resto do dinheiro do Cliente",
+                                       "6 - Mostrar os dados do Cliente", "7 - Fechar o Sistema"};
 
                 Console.WriteLine("--- Menu Principal ---\n");
                 foreach (string opt in optionMenu)
@@ -61,7 +64,7 @@ namespace OOP_Ex05_HotelManager
                 Console.Write("\nOpcão: ");
                 string optionString = Console.ReadLine();
 
-                if (int.TryParse(optionString, out optionNumber) && optionNumber >= 1 && optionNumber <= 4)
+                if (int.TryParse(optionString, out optionNumber) && optionNumber >= 1 && optionNumber <= 7)
                 {
                     switch (optionNumber)
                     {
@@ -72,6 +75,13 @@ namespace OOP_Ex05_HotelManager
                             myRoom.CheckIn();
                             break;
                         case 3:
+                            if (!myRoom.GetIsOccupied())
+                            {
+                                Console.WriteLine($"\n[Erro]: Não existe nenhum check-in feito para o quarto {roomNumber}.\n" +
+                                                  $"Então não pode fazer o check-out. Tente novamente!\n");
+                                break; //verifica se não está ocupado então não tem checkin
+                            }
+
                             int nightNumber;
                             while (true)
                             {
@@ -87,9 +97,69 @@ namespace OOP_Ex05_HotelManager
                                     Console.WriteLine($"\n[Erro]: Número de noites incorreto. Tente novamente!\n");
                                 }
                             }
-                            myRoom.CheckOut(nightNumber);
+                            myRoom.CheckOut(nightNumber, myCustomer); //Mandas as noites E o cartão do cliente para o quarto(classe)!
                             break;
                         case 4:
+                            if (!myRoom.GetIsOccupied())
+                            {
+                                Console.WriteLine($"\n[Erro]: Não existe nenhum check-in feito para o quarto {roomNumber}.\n" +
+                                                  $"Então não pode fazer o depósito. Tente novamente!\n");
+                                break; //verifica se não está ocupado então não tem checkin
+                            }
+
+                            double depositNumber;
+                            while (true)
+                            {
+                                Console.Write("\nQuanto o cliente quer depositar: ");
+                                string depositString = Console.ReadLine();
+
+                                if (double.TryParse(depositString, out depositNumber) && depositNumber > 0)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n[Erro]: Valor do depósito incorreto. Tente novamente!\n");
+                                }
+                            }
+                            myCustomer.Deposit(depositNumber);
+                            break;
+                        case 5:
+                            if (myRoom.GetIsOccupied())
+                            {
+                                Console.WriteLine($"\n[Erro]: O cliente ainda está no quarto {roomNumber} (Check-In ativo).\n" +
+                                                  $"Não pode levantar o dinheiro antes de fazer o Check-Out e pagar a conta!\n");
+                                break; //verifica se não está ocupado então não tem checkin
+                            }
+
+                            string moneyLeftString;
+                            while (true)
+                            {
+                                Console.Write("\nDeseja retirar todo o dinheiro do Cliente?(Sim ou Não): ");
+                                moneyLeftString = Console.ReadLine().Trim().ToLower();
+
+                                if (moneyLeftString == "sim" || moneyLeftString == "não" || moneyLeftString == "nao")
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\n[Erro]: Resposta errada. Digite apenas 'Sim' ou 'Não'. Tente novamente!");
+                                }
+                            }
+                            myCustomer.MoneyLeft(moneyLeftString);
+                            break;
+                        case 6:
+                            if (!myRoom.GetIsOccupied())
+                            {
+                                Console.WriteLine($"\n[Erro]: Não existe nenhum check-in feito para o quarto {roomNumber}.\n" +
+                                                  $"Então não pode ver os dados do cliente. Tente novamente!\n");
+                                break; //verifica se não está ocupado então não tem checkin
+                            }
+
+                            myCustomer.ShowCustomerData();
+                            break;
+                        case 7:
                             Environment.Exit(0);
                             break;
                     }
