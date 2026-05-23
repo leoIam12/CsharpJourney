@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Ex03_AccessModifiers", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Ex04_MultibancoATMsystem", "OOP_Ex04_MultibancoATMsystem\OOP_Ex04_MultibancoATMsystem.csproj", "{AA86BF69-C649-4474-95FD-7BF4672B20B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Ex05_HotelManager", "OOP_Ex05_HotelManager\OOP_Ex05_HotelManager.csproj", "{930DFFBF-C627-487C-86A3-F29AD20C8D93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{AA86BF69-C649-4474-95FD-7BF4672B20B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA86BF69-C649-4474-95FD-7BF4672B20B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA86BF69-C649-4474-95FD-7BF4672B20B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{930DFFBF-C627-487C-86A3-F29AD20C8D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{930DFFBF-C627-487C-86A3-F29AD20C8D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{930DFFBF-C627-487C-86A3-F29AD20C8D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{930DFFBF-C627-487C-86A3-F29AD20C8D93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
