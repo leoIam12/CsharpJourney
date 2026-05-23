@@ -25,7 +25,7 @@ namespace OOP_Ex05_HotelManager
             else
             {
                 isOccupied = true; //o quarto fica ocupado
-                Console.WriteLine($"\nBem-Vindo!\n");
+                Console.WriteLine($"\nCheck-In efetuado com sucesso. Bem-Vindo!\n");
             }
         }
 
