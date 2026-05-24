@@ -9,6 +9,8 @@ namespace OOP_Ex05_HotelManager
         private double pricePerNight;
         private double totalPay;
 
+        private Guest[] guestsInRoom = new Guest[2]; //cada quarto so leva duas pessoas 
+
         public Room(int room, double price)
         {
             roomNumber = room;
@@ -17,7 +19,7 @@ namespace OOP_Ex05_HotelManager
             isOccupied = false;
         }
 
-        public void CheckIn()
+        public void CheckIn(Guest guest1, Guest guest2 = null)
         {
             if (isOccupied)
             {
@@ -26,7 +28,19 @@ namespace OOP_Ex05_HotelManager
             else
             {
                 isOccupied = true; //o quarto fica ocupado
-                Console.WriteLine($"\nCheck-In efetuado com sucesso. Bem-Vindo!\n");
+
+                //Guardar as pessoas no nosso array (as camas do quarto)
+                guestsInRoom[0] = guest1; //titular
+                guestsInRoom[1] = guest2; //parceiro se houver
+
+                Console.WriteLine($"\nCheck-In efetuado com sucesso para o quarto {roomNumber}.\n");
+                Console.WriteLine($"Hóspede Principal (Pagante): {guestsInRoom[0].nameGuest}");
+
+                if (guestsInRoom[1] != null)
+                {
+                    Console.WriteLine($"Acompanhante: {guestsInRoom[1].nameGuest}");
+                }
+                Console.WriteLine($"\nBem-Vindos!\n");
             }
         }
 
@@ -44,13 +58,17 @@ namespace OOP_Ex05_HotelManager
                 totalPay = (double)nights * pricePerNight;
                 Console.WriteLine($"\nTotal a Pagar: {Math.Round(totalPay, 2)}£.\n");
 
-                //tenta cobrar na conta do cliente
+                //tenta cobrar na conta do cliente(se tiver sucesso no pagamento)
                 bool paymentSuccessful = customer.TryMakePayment(totalPay);
 
                 if (paymentSuccessful)
                 {
                     //retira o dinheiro
                     isOccupied = false; //o quarto fica livre novamente
+
+                    guestsInRoom[0] = null; //limpa a cama
+                    guestsInRoom[1] = null; //limpa a cama
+
                     Console.WriteLine($"Pagamento concluído! O Check-out do quarto {roomNumber} foi efetuado com sucesso.\n");
                 }
                 else
@@ -79,6 +97,22 @@ namespace OOP_Ex05_HotelManager
         public bool GetIsOccupied()
         {
             return isOccupied; //Criado para ler e devolver a variavel privada
+        }
+
+        public void ShowGuests()
+        {
+            Console.WriteLine("\n--- Dados dos Hóspedes no Quarto ---");
+
+            foreach (Guest guest in guestsInRoom)
+            {
+                if (guest != null) // Bloqueia o fantasma! Só lê se existir alguém.
+                {
+                    Console.WriteLine($"Nome: {guest.nameGuest}");
+                    Console.WriteLine($"Idade: {guest.ageGuest} anos");
+                    Console.WriteLine($"BI: {guest.idGuest}");
+                    Console.WriteLine("--------------------------------");
+                }
+            }
         }
     }
 }

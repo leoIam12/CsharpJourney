@@ -45,6 +45,7 @@ namespace OOP_Ex05_HotelManager
 
             Room myRoom = new Room(roomNumber, pricePerNightNumber);
             CustomerAccount myCustomer = new CustomerAccount();
+            Guest[] guestsInRoom = new Guest[2];
 
             while (true)
             {
@@ -72,7 +73,115 @@ namespace OOP_Ex05_HotelManager
                             myRoom.ShowStatus();
                             break;
                         case 2:
-                            myRoom.CheckIn();
+                            if (myRoom.GetIsOccupied())
+                            {
+                                Console.WriteLine($"\n[Erro]: Já existe um check-in feito para o quarto {roomNumber}.\n" +
+                                                  $"Então não pode fazer o check-in novamente!\n");
+                                break; //verifica se não está ocupado então não tem checkin
+                            }
+
+                            int personNumber;
+                            //perguntar a quantidade de pessoas
+                            while (true)
+                            {
+                                Console.Write("\nO check-in é para quantas pessoas (1 ou 2): ");
+                                string personString = Console.ReadLine();
+
+                                if (int.TryParse(personString, out personNumber) && personNumber >= 1 && personNumber <= 2)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n[Erro]: Número de pessoas incorreto. Tente novamente!\n");
+                                }
+                            }
+
+                            // Limpar o array por segurança antes de começar
+                            guestsInRoom[0] = null;
+                            guestsInRoom[1] = null;
+
+                            //recolher dados
+                            for (int i = 0; i < personNumber; i++)
+                            {
+                                string guestName;
+                                while (true)
+                                {
+                                    if (i == 0)
+                                    {
+                                        Console.Write($"\nInsira o Nome do Hóspede Principal/Titular: ");
+                                    }
+                                    else
+                                    {
+                                        Console.Write($"\nInsira o Nome do Acompanhante: ");
+                                    }
+
+                                    guestName = Console.ReadLine();
+
+                                    if (!string.IsNullOrWhiteSpace(guestName))
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"\n[Erro]: Nome incorreto. Tente novamente!\n");
+                                    }
+                                }
+
+                                int guestAgeNumber;
+                                while (true)
+                                {
+
+                                    if (i == 0)
+                                    {
+                                        Console.Write($"\nInsira a Idade do Hóspede Principal/Titular: ");
+                                    }
+                                    else
+                                    {
+                                        Console.Write($"\nInsira a Idade do Acompanhante: ");
+                                    }
+                                    string guestAgeString = Console.ReadLine();
+
+                                    if (int.TryParse(guestAgeString, out guestAgeNumber) && guestAgeNumber > 0 && guestAgeNumber < 120)
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"\n[Erro]: Idade incorreta. Tente novamente!\n");
+                                    }
+                                }
+
+                                int guestIDNumber;
+                                while (true)
+                                {
+                                    if (i == 0)
+                                    {
+                                        Console.Write($"\nInsira o BI do Hóspede Principal/Titular: ");
+                                    }
+                                    else
+                                    {
+                                        Console.Write($"\nInsira o BI do Acompanhante: ");
+                                    }
+                                    string guestIDString = Console.ReadLine();
+
+                                    if (int.TryParse(guestIDString, out guestIDNumber) && guestIDNumber > 0)
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"\n[Erro]: BI incorreto. Tente novamente!\n");
+                                    }
+                                }
+
+                                //Pegar no Nome, Idade e BI, criamos o Objeto Guest, e guardar na posição [i] do array
+                                guestsInRoom[i] = new Guest(guestName, guestAgeNumber, guestIDNumber);
+                            }
+
+                            //Mando os objetos reais para o quarto
+                            //O guestsInRoom[1] pode ir como null se a pessoa escolheu apenas 1 hóspede. O Quarto sabe lidar com isso
+                            myRoom.CheckIn(guestsInRoom[0], guestsInRoom[1]);
                             break;
                         case 3:
                             if (!myRoom.GetIsOccupied())
@@ -157,6 +266,7 @@ namespace OOP_Ex05_HotelManager
                                 break; //verifica se não está ocupado então não tem checkin
                             }
 
+                            myRoom.ShowGuests();
                             myCustomer.ShowCustomerData();
                             break;
                         case 7:

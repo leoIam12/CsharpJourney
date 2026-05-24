@@ -55,10 +55,7 @@ namespace OOP_Ex05_HotelManager
 
         public void ShowCustomerData()
         {
-            Console.WriteLine("\nNome: Leonel Fernandes");
-            Console.WriteLine("Idade: 22 anos");
-            Console.WriteLine("BI: 172898");
-            Console.WriteLine($"Saldo Disponível: {balanceCustomer}£\n");
+            Console.WriteLine($"Saldo Disponível na conta: {balanceCustomer}£\n");
         }
     }
 }
