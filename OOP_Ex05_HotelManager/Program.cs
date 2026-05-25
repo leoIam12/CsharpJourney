@@ -11,39 +11,33 @@ namespace OOP_Ex05_HotelManager
 
             Console.WriteLine("--- Registo do Quarto ---\n");
 
-            int roomNumber;
-            while (true)
-            {
-                Console.Write("\nInsira o número do quarto: ");
-                string roomString = Console.ReadLine();
+            Room[] myHotel = new Room[50];
 
-                if (int.TryParse(roomString, out roomNumber) && roomNumber > 0)
+            for (int i = 0; i < myHotel.Length; i++)
+            {
+                //guardar o número do quarto
+                int currentRoomNumber = 300 + i;
+
+                //guardar o valor do quarto
+                double currentPrice = 0;
+
+                if (i >= 0 && i <= 19) //(quarto 300 a 319)
                 {
-                    break;
+                    currentPrice = 65.99; //preço standart
                 }
-                else
+                else if (i >= 20 && i <= 39) //(quarto 320 a 339)
                 {
-                    Console.WriteLine($"\n[Erro]: Não existe quarto com número {roomNumber}. Tente novamente!\n");
+                    currentPrice = 85.99; //preço executivo
                 }
+                else //(quarto 340 a 349)
+                {
+                    currentPrice = 105.99; //preço suite
+                }
+
+                //chamamos passando o numero do quarto e o valor
+                myHotel[i] = new Room(currentRoomNumber, currentPrice);
             }
 
-            double pricePerNightNumber;
-            while (true)
-            {
-                Console.Write("\nInsira o preço do quarto por noite: ");
-                string pricePerNightString = Console.ReadLine();
-
-                if (double.TryParse(pricePerNightString, out pricePerNightNumber) && pricePerNightNumber > 0)
-                {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine($"\n[Erro]: Valor incorreto. Tente novamente!\n");
-                }
-            }
-
-            Room myRoom = new Room(roomNumber, pricePerNightNumber);
             CustomerAccount myCustomer = new CustomerAccount();
             Guest[] guestsInRoom = new Guest[2];
 
@@ -70,12 +64,50 @@ namespace OOP_Ex05_HotelManager
                     switch (optionNumber)
                     {
                         case 1:
-                            myRoom.ShowStatus();
+                            int searchRoomNumber1;
+                            //perguntar o numero de quarto que deseja consultar
+                            while (true)
+                            {
+                                Console.Write("Qual é o número do quarto que deseja consultar (300 a 349) ?: ");
+                                string searchRoomString1 = Console.ReadLine();
+
+                                if (int.TryParse(searchRoomString1, out searchRoomNumber1) && searchRoomNumber1 >= 300 && searchRoomNumber1 <= 349)
+                                {
+                                    //se digitou quarto 305, o index = a 305 - 300 = 5(posição no array)
+                                    int index = searchRoomNumber1 - 300;
+
+                                    //chama o metodo ShowStatus()
+                                    myHotel[index].ShowStatus();
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n[Erro]: Número de quarto incorreto. Tente novamente!\n");
+                                }
+                            }
                             break;
                         case 2:
-                            if (myRoom.GetIsOccupied())
+                            int searchRoomNumber2;
+                            while (true)
                             {
-                                Console.WriteLine($"\n[Erro]: Já existe um check-in feito para o quarto {roomNumber}.\n" +
+                                Console.Write("\nDe qual quarto deseja fazer o check-in (300 a 349)?: ");
+                                string searchRoomString2 = Console.ReadLine();
+
+                                if (int.TryParse(searchRoomString2, out searchRoomNumber2) && searchRoomNumber2 >= 300 && searchRoomNumber2 <= 349)
+                                {
+                                    break; // Sai do loop se o número for válido
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n[Erro]: Número de quarto incorreto. Tente novamente!\n");
+                                }
+                            }
+
+                            int index2 = searchRoomNumber2 - 300;
+
+                            if (myHotel[index2].GetIsOccupied())
+                            {
+                                Console.WriteLine($"\n[Erro]: Já existe um check-in feito para o quarto {searchRoomNumber2}.\n" +
                                                   $"Então não pode fazer o check-in novamente!\n");
                                 break; //verifica se não está ocupado então não tem checkin
                             }
@@ -181,12 +213,30 @@ namespace OOP_Ex05_HotelManager
 
                             //Mando os objetos reais para o quarto
                             //O guestsInRoom[1] pode ir como null se a pessoa escolheu apenas 1 hóspede. O Quarto sabe lidar com isso
-                            myRoom.CheckIn(guestsInRoom[0], guestsInRoom[1]);
+                            myHotel[index2].CheckIn(guestsInRoom[0], guestsInRoom[1]);
                             break;
                         case 3:
-                            if (!myRoom.GetIsOccupied())
+                            int searchRoomNumber3;
+                            while (true)
                             {
-                                Console.WriteLine($"\n[Erro]: Não existe nenhum check-in feito para o quarto {roomNumber}.\n" +
+                                Console.Write("\nDe qual quarto deseja fazer o check-out (300 a 349)?: ");
+                                string searchRoomString3 = Console.ReadLine();
+
+                                if (int.TryParse(searchRoomString3, out searchRoomNumber3) && searchRoomNumber3 >= 300 && searchRoomNumber3 <= 349)
+                                {
+                                    break; // Sai do loop se o número for válido
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n[Erro]: Número de quarto incorreto. Tente novamente!\n");
+                                }
+                            }
+
+                            int index3 = searchRoomNumber3 - 300;
+
+                            if (!myHotel[index3].GetIsOccupied())
+                            {
+                                Console.WriteLine($"\n[Erro]: Não existe nenhum check-in feito para o quarto {searchRoomNumber3}.\n" +
                                                   $"Então não pode fazer o check-out. Tente novamente!\n");
                                 break; //verifica se não está ocupado então não tem checkin
                             }
@@ -206,12 +256,30 @@ namespace OOP_Ex05_HotelManager
                                     Console.WriteLine($"\n[Erro]: Número de noites incorreto. Tente novamente!\n");
                                 }
                             }
-                            myRoom.CheckOut(nightNumber, myCustomer); //Mandas as noites E o cartão do cliente para o quarto(classe)!
+                            myHotel[index3].CheckOut(nightNumber, myCustomer); //Mandas as noites E o cartão do cliente para o quarto(classe)!
                             break;
                         case 4:
-                            if (!myRoom.GetIsOccupied())
+                            int searchRoomNumber4;
+                            while (true)
                             {
-                                Console.WriteLine($"\n[Erro]: Não existe nenhum check-in feito para o quarto {roomNumber}.\n" +
+                                Console.Write("\nDe qual quarto deseja levantar o resto do dinheiro (300 a 349)?: ");
+                                string searchRoomString4 = Console.ReadLine();
+
+                                if (int.TryParse(searchRoomString4, out searchRoomNumber4) && searchRoomNumber4 >= 300 && searchRoomNumber4 <= 349)
+                                {
+                                    break; // Sai do loop se o número for válido
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n[Erro]: Número de quarto incorreto. Tente novamente!\n");
+                                }
+                            }
+
+                            int index4 = searchRoomNumber4 - 300;
+
+                            if (!myHotel[index4].GetIsOccupied())
+                            {
+                                Console.WriteLine($"\n[Erro]: Não existe nenhum check-in feito para o quarto {searchRoomNumber4}.\n" +
                                                   $"Então não pode fazer o depósito. Tente novamente!\n");
                                 break; //verifica se não está ocupado então não tem checkin
                             }
@@ -234,9 +302,27 @@ namespace OOP_Ex05_HotelManager
                             myCustomer.Deposit(depositNumber);
                             break;
                         case 5:
-                            if (myRoom.GetIsOccupied())
+                            int searchRoomNumber5;
+                            while (true)
                             {
-                                Console.WriteLine($"\n[Erro]: O cliente ainda está no quarto {roomNumber} (Check-In ativo).\n" +
+                                Console.Write("\nDe qual quarto deseja levantar o resto do dinheiro (300 a 349)?: ");
+                                string searchRoomString5 = Console.ReadLine();
+
+                                if (int.TryParse(searchRoomString5, out searchRoomNumber5) && searchRoomNumber5 >= 300 && searchRoomNumber5 <= 349)
+                                {
+                                    break; // Sai do loop se o número for válido
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n[Erro]: Número de quarto incorreto. Tente novamente!\n");
+                                }
+                            }
+
+                            int index5 = searchRoomNumber5 - 300;
+
+                            if (myHotel[index5].GetIsOccupied())
+                            {
+                                Console.WriteLine($"\n[Erro]: O cliente ainda está no quarto {searchRoomNumber5} (Check-In ativo).\n" +
                                                   $"Não pode levantar o dinheiro antes de fazer o Check-Out e pagar a conta!\n");
                                 break; //verifica se não está ocupado então não tem checkin
                             }
@@ -259,14 +345,32 @@ namespace OOP_Ex05_HotelManager
                             myCustomer.MoneyLeft(moneyLeftString);
                             break;
                         case 6:
-                            if (!myRoom.GetIsOccupied())
+                            int searchRoomNumber6;
+                            while (true)
                             {
-                                Console.WriteLine($"\n[Erro]: Não existe nenhum check-in feito para o quarto {roomNumber}.\n" +
+                                Console.Write("\nDe qual quarto deseja ver os dados (300 a 349)?: ");
+                                string searchRoomString6 = Console.ReadLine();
+
+                                if (int.TryParse(searchRoomString6, out searchRoomNumber6) && searchRoomNumber6 >= 300 && searchRoomNumber6 <= 349)
+                                {
+                                    break; // Sai do loop se o número for válido
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n[Erro]: Número de quarto incorreto. Tente novamente!\n");
+                                }
+                            }
+
+                            int index6 = searchRoomNumber6 - 300;
+
+                            if (!myHotel[index6].GetIsOccupied())
+                            {
+                                Console.WriteLine($"\n[Erro]: Não existe nenhum check-in feito para o quarto {searchRoomNumber6}.\n" +
                                                   $"Então não pode ver os dados do cliente. Tente novamente!\n");
                                 break; //verifica se não está ocupado então não tem checkin
                             }
 
-                            myRoom.ShowGuests();
+                            myHotel[index6].ShowGuests();
                             myCustomer.ShowCustomerData();
                             break;
                         case 7:

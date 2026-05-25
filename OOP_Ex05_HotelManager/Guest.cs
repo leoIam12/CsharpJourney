@@ -14,6 +14,5 @@ namespace OOP_Ex05_HotelManager
             ageGuest = age;
             idGuest = id;
         }
-
     }
 }
