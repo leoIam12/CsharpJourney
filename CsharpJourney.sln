@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Ex04_MultibancoATMsyste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Ex05_HotelManager", "OOP_Ex05_HotelManager\OOP_Ex05_HotelManager.csproj", "{930DFFBF-C627-487C-86A3-F29AD20C8D93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Ex06_CentralParking", "OOP_Ex06_CentralParking\OOP_Ex06_CentralParking.csproj", "{C817E9E7-FF0A-4C3F-9C93-1EB2AB2F29DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{930DFFBF-C627-487C-86A3-F29AD20C8D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{930DFFBF-C627-487C-86A3-F29AD20C8D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{930DFFBF-C627-487C-86A3-F29AD20C8D93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C817E9E7-FF0A-4C3F-9C93-1EB2AB2F29DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C817E9E7-FF0A-4C3F-9C93-1EB2AB2F29DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C817E9E7-FF0A-4C3F-9C93-1EB2AB2F29DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C817E9E7-FF0A-4C3F-9C93-1EB2AB2F29DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
