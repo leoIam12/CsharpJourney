@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Ex06_CentralParking", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Ex07_TechFix", "OOP_Ex07_TechFix\OOP_Ex07_TechFix.csproj", "{18E1B390-95AF-4603-AAB5-7B80950B76EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Ex08_DriveFast_RentCar", "OOP_Ex08_DriveFast_RentCar\OOP_Ex08_DriveFast_RentCar.csproj", "{60DD0BEC-9824-46C2-9A09-B0145A7BD139}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{18E1B390-95AF-4603-AAB5-7B80950B76EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18E1B390-95AF-4603-AAB5-7B80950B76EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18E1B390-95AF-4603-AAB5-7B80950B76EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60DD0BEC-9824-46C2-9A09-B0145A7BD139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60DD0BEC-9824-46C2-9A09-B0145A7BD139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60DD0BEC-9824-46C2-9A09-B0145A7BD139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60DD0BEC-9824-46C2-9A09-B0145A7BD139}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
